@@ -20,6 +20,7 @@ class CreateProductosTable extends Migration
             $table->decimal('precio');
             $table->integer('stock');
             $table->string('imagen');
+            $table->foreignId('TipoId');
             $table->foreignId('departamentoId');
             $table->timestamps();
         });

@@ -23,6 +23,9 @@
     <label for="stock"> Stock </label>
     <input type="text" class="form-control" name="stock" id="stock" value="{{ isset($producto->stock)?$producto->stock:old('stock') }}">
 
+    <label for="TipoId"> Tipo de unidad </label>
+    <input type="text" class="form-control" name="TipoId" id="TipoId" value="{{ isset($producto->TipoId)?$producto->TipoId:old('TipoId') }}">
+    
     <label for="departamentoId"> Departamento </label>
     <input type="text" class="form-control" name="departamentoId" id="departamentoId" value="{{ isset($producto->departamentoId)?$producto->departamentoId:old('departamentoId') }}">
 

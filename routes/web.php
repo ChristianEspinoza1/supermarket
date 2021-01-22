@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ProductoController;
-
+use App\Http\Controllers\PClienteController;
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,15 +19,24 @@ use App\Http\Controllers\ProductoController;
 Route::get('/', function () {
     return view('auth.login');
 });
-/*
-Route::get('/usuarios', function () {
-    return view('Usuarios.index');
-});
 
-Route::get('/usuarios/create',[UsuarioController::class,'create']);
+//carrito
+
+//Route::post('cart-add','CartController@add')->name('cart.add');
+Route::post('/cart-add', [CartController::class, 'add'])->name('cart.add');
+Route::get('/cart-checkout', [CartController::class, 'cart'])->name('cart.checkout');
+Route::post('/cart-clear', [CartController::class, 'clear'])->name('cart.clear');
+Route::post('/cart-removeitem', [CartController::class, 'removeitem'])->name('cart.removeitem');
+
+/*
+Route::get('cart-checkout','CartController@cart')->name('cart.checkout');
+Route::post('cart-clear','CartController@clear')->name('cart.clear');
+Route::post('cart-removeitem','CartController@removeitem')->name('cart.removeitem');
 */
+
 Route::resource('usuario',UsuarioController::class)->middleware('auth');
 Route::resource('producto',ProductoController::class)->middleware('auth');
+Route::resource('welcome',PClienteController::class);
 
 Auth::routes(['reset'=>false]);
 

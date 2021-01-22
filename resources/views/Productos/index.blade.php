@@ -25,6 +25,7 @@
                 <th>Descripcion</th>
                 <th>Precio</th>
                 <th>Stock</th>
+                <th>Tipo de unidad</th>
                 <th>departamento</th>
                 <th>Acción</th>
             </tr>
@@ -40,6 +41,7 @@
                 <td>{{ $producto->descripcion }}</td>
                 <td>{{ $producto->precio }}</td>
                 <td>{{ $producto->stock }}</td>
+                <td>{{ $producto->tipoId }}</td>
                 <td>{{ $producto->departamentoId }}</td>
                 <td>
                     <a href="{{ url('/producto/'.$producto->id.'/edit') }}" class="btn btn-warning">

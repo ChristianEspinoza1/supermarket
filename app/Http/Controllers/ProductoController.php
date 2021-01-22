@@ -43,6 +43,8 @@ class ProductoController extends Controller
             'descripcion'=>'required|string|max:80',
             'precio'=>'required',
             'stock'=>'required',
+            'TipoId'=>'required',
+            'departamentoId'=>'required',
             'imagen'=>'required|max:10000|mimes:jpeg,png,jpg',
         ];
         $mensaje=[
@@ -99,6 +101,8 @@ class ProductoController extends Controller
             'descripcion'=>'required|string|max:80',
             'precio'=>'required',
             'stock'=>'required',
+            'TipoId'=>'required',
+            'departamentoId'=>'required',
         ];
         $mensaje=[
             'required'=>'El :attribute es requerido',
